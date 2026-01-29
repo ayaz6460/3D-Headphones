@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-background-secondary: #0A0A0C;
+  --color-foreground: rgba(255, 255, 255, 0.9);
+  --color-foreground-muted: rgba(255, 255, 255, 0.6);
+
+  --color-sony-blue: #0050FF;
+  --color-sony-cyan: #00D6FF;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --image-hero-gradient: radial-gradient(circle at center, #050505 0%, #050815 80%);
+
+  --animate-scroll: scroll 30s linear infinite;
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@utility mask-slide {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    antialiased: auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tracking-tight-custom {
+    letter-spacing: -0.02em;
+  }
+}
